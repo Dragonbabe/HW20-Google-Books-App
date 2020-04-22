@@ -2,7 +2,7 @@ const express = require(`express`);
 
 const mongoose = require(`mongoose`);
 
-const routes = require(`routes`);
+const routes = require(`./routes`);
 
 const app = express();
 
@@ -23,4 +23,4 @@ mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/googlebooks`, {
     useCreateIndex: true
 });
 
-app.listen(PORT, () => console.log(`API  server listeingin on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`API  server listening on http://localhost:${PORT}`));

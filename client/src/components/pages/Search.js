@@ -31,14 +31,15 @@ function Search() {
     return (
         <>
         <Header/>
-        <form className="form">
-          <input
+        <form className="form-group">
+           <label htmlFor="bookSearch">What book are you interested in? Type here to search!</label> 
+          <input className="form-control"
             value={userInput}
             onChange={event => setUserInput(event.target.value)}
             type="text"
-            placeholder="Search for a book"
+            placeholder="Search for a book here"
           />
-          <button onClick={handleFormSubmit}>Submit</button>
+          <button type="button" className="btn btn-outline-secondary" onClick={handleFormSubmit}>Search!</button>
         </form>
     <div className="row">
         {bookResults.items && bookResults.items.map(book => (

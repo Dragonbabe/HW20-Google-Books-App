@@ -45,13 +45,13 @@ function Search() {
             <div className="col-md-6">
             <h1>{book.volumeInfo.title}</h1>
             <div className="img-container">
-                <img alt="beep-boop" src={book.imageLinks}
+                <img alt="beep-boop" src={book.volumeInfo.imageLinks.thumbnail}
                  className="img-fluid"/> 
             </div>
             <div className="content">
                 <h1>{book.volumeInfo.authors}</h1>
                 <p>
-                    {/* {book.volumeInfo} */}
+                    {book.volumeInfo.description}
                 </p>
             </div>
              {/* <button onClick={event => saveToDataBase(event, book)}>Save!</button>  */}

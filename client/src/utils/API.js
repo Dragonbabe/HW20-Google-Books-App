@@ -1,13 +1,12 @@
 import axios from 'axios';
 
 export default {
+    getGoogleResults(userInput) {
+        return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${userInput}`);
+    },
     //get all the books
     getBooks() {
     return axios.get(`/api/books`);
-    },
-    // get certain books with an id
-    getBook(id) {
-        return axios.get(`/api/books/${ id}`);
     },
     // delete a book with certain id
     deleteBook(id) {

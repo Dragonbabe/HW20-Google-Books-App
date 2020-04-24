@@ -17,16 +17,24 @@ function Search() {
             throw err;
         });
     }
-    // const saveToDataBase = event => {
-    //     event.preventDefault();
-    //     API.saveBook({
-    //         title: book.volumeInfo.title,
-    //         author: authors.volumeInfo.authors,
-    //         description: book.volumeInfo.previewLink,
-    //         image: book.volumeInfo.imageLinks
-    //     })
-        
-    // } 
+    const saveToDataBase = event => {
+        event.preventDefault();
+        const containsContent = bookResults.title && bookResults.authors;
+        if (containsContent) {
+        API.saveBook({
+            title: bookResults.title,
+            author: bookResults.authors,
+              image: bookResults.image,
+            description: bookResults.description
+        })
+            .then(() => setBookResults())
+            .catch(err => {
+                throw err;
+            })
+        } else {
+            alert(`Please enter some information to save!`)
+        }  
+    } 
 
     return (
         <>
@@ -63,7 +71,7 @@ function Search() {
                 ))}
             </tbody>
         </table>
-             {/* <button onClick={event => saveToDataBase(event, book)}>Save!</button>  */}
+             <button onClick={event => saveToDataBase(event, bookResults)}>Save!</button> 
         </div>
     </>
     );

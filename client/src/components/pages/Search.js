@@ -41,25 +41,30 @@ function Search() {
           />
           <button type="button" className="btn btn-outline-secondary" onClick={handleFormSubmit}>Search!</button>
         </form>
-    <div className="row">
-        {bookResults.items && bookResults.items.map(book => (
-            <div className="col-md-6">
-            <h1>{book.volumeInfo.title}</h1>
-            <div className="img-container">
-                <img alt="beep-boop" src={book.volumeInfo.imageLinks.thumbnail}
-                 className="img-fluid"/> 
-            </div>
-            <div className="content">
-                <h1>{book.volumeInfo.authors}</h1>
-                <p>
-                    {book.volumeInfo.description}
-                </p>
-            </div>
+    <div>
+        <table className="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Photo</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            {bookResults.items && bookResults.items.map(book => (
+                <tr>
+                    <td>{book.volumeInfo.title}</td>
+                    <td>{book.volumeInfo.authors}</td>
+                    <td><img alt="beep-boop" src={book.volumeInfo.imageLinks.thumbnail}
+                 className="img-fluid"/></td>
+                    <td> {book.volumeInfo.description}</td>
+                </tr>
+                ))}
+            </tbody>
+        </table>
              {/* <button onClick={event => saveToDataBase(event, book)}>Save!</button>  */}
         </div>
-        
-        ))}
-    </div>
     </>
     );
 }

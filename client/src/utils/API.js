@@ -10,7 +10,7 @@ export default {
     },
     // delete a book with certain id
     deleteBook(id) {
-        return axios.delete(`/api/books/${ id}`);
+        return axios.delete(`/api/books/${id}`);
     },
     //save a book to the database
     saveBook(bookData) {

@@ -17,6 +17,7 @@ function Card(props) {
                                 </p>
                                 <a href={props.link}>See more info!</a><br>
                                 </br>
+                                
                                 <button onClick={event => props.onClick(event, props.book)}>Save!</button> 
                             </div>
                         </div>

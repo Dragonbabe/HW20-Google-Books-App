@@ -1,31 +1,32 @@
 import React, { useState } from 'react';
 import API from '../../utils/API';
-
+import Card from '../Card';
 import Header from '../Header';
 
 
 function Search() {
     let [userInput, setUserInput] = useState("");
-    let [bookResults, setBookResults] = useState({});
+    let [bookResults, setBookResults] = useState([]);
     const handleFormSubmit = event => {
         event.preventDefault();
         API.getGoogleResults(userInput).then(res => {
             console.log(res);
-            setBookResults(res.data)
+            setBookResults(res.data.items)
         })
         .catch(err => {
             throw err;
         });
     }
-    const saveToDataBase = event => {
+    const saveToDataBase = (event, book) => {
         event.preventDefault();
-        const containsContent = bookResults.title && bookResults.authors;
+        const containsContent = book.volumeInfo.title && book.volumeInfo.authors;
         if (containsContent) {
         API.saveBook({
-            title: bookResults.title,
-            author: bookResults.authors,
-              image: bookResults.image,
-            description: bookResults.description
+            title: book.volumeInfo.title,
+            authors: book.volumeInfo.authors,
+              image: book.volumeInfo.imageLinks.thumbnail,
+            description: book.volumeInfo.description,
+            link: book.volumeInfo.infoLink
         })
             .then(() => setBookResults())
             .catch(err => {
@@ -50,28 +51,18 @@ function Search() {
           <button type="button" className="btn btn-outline-secondary" onClick={handleFormSubmit}>Search!</button>
         </form>
     <div>
-        <table className="table">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Photo</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-            {bookResults.items && bookResults.items.map(book => (
-                <tr>
-                    <td>{book.volumeInfo.title}</td>
-                    <td>{book.volumeInfo.authors}</td>
-                    <td><img alt="beep-boop" src={book.volumeInfo.imageLinks.thumbnail}
-                 className="img-fluid"/></td>
-                    <td> {book.volumeInfo.description}</td>
-                </tr>
+            {bookResults && bookResults.map(book => (
+                <Card 
+                title={book.volumeInfo.title}
+                authors={book.volumeInfo.authors}
+                image={book.volumeInfo.imageLinks.thumbnail}
+                description={book.volumeInfo.description}
+                link={book.volumeInfo.infoLink}   
+                onClick={saveToDataBase}
+                book={book}
+                key={book.volumeInfo.infoLink}
+                />
                 ))}
-            </tbody>
-        </table>
-             <button onClick={event => saveToDataBase(event, bookResults)}>Save!</button> 
         </div>
     </>
     );

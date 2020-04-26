@@ -6,36 +6,41 @@ import API from '../../utils/API';
 function Saved() {
     let [bookResults, setBookResults] = useState();
 
-
-    useEffect(() => {
+    function getSavedBooks() {
         API.getBooks().then(res => {
-            console.log(res)
             setBookResults(res.data)
         })
-    }, []);
-    function deleteBook(id){
-        API.deleteBook(id)
-        .then(() => setBookResults())
-        .catch(err => {
-            throw err;
-        })
     }
+    useEffect(() => {
+        getSavedBooks();
+    }, []);
+    function deleteBook(id) {
+        API.deleteBook(id)
+            .then(() => {
+                getSavedBooks();
+            })
+            .catch(err => {
+                throw err;
+            })
+    } 
     return (
         <>
-        <Header/>
-        <div>
-        {bookResults && bookResults.map(book => (
-            <Card 
-            title={book.title}
-            authors={book.authors}
-            image={book.image}
-            description={book.description}
-            link={book.link}   
-            onClick={deleteBook}
-            key={book._id}
-            />
-        ))}
-        </div>
+            <Header />
+            <div>
+                {bookResults && bookResults.map(book => (
+                    <Card
+                        title={book.title}
+                        authors={book.authors}
+                        image={book.image}
+                        description={book.description}
+                        link={book.link}
+                        onClick={deleteBook}
+                        key={book._id}
+                        message={"Delete!"}
+                        id={book._id}
+                    />
+                ))}
+            </div>
         </>
     )
 }

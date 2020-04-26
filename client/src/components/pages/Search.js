@@ -17,8 +17,8 @@ function Search() {
             throw err;
         });
     }
-    const saveToDataBase = (event, book) => {
-        event.preventDefault();
+    const saveToDataBase = (book) => {
+       // event.preventDefault();
         const containsContent = book.volumeInfo.title && book.volumeInfo.authors;
         if (containsContent) {
         API.saveBook({
@@ -61,6 +61,7 @@ function Search() {
                 onClick={saveToDataBase}
                 book={book}
                 key={book.volumeInfo.infoLink}
+                message={"Save Book!"}
                 />
                 ))}
         </div>

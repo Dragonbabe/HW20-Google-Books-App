@@ -4,6 +4,7 @@ import Card from '../Card';
 import Header from '../Header';
 
 
+
 function Search() {
     let [userInput, setUserInput] = useState("");
     let [bookResults, setBookResults] = useState([]);
@@ -41,14 +42,14 @@ function Search() {
         <>
         <Header/>
         <form className="form-group">
-           <label htmlFor="bookSearch">What book are you interested in? Type here to search!</label> 
-          <input className="form-control"
+          <h1>What book are you interested in? Type here to search!</h1>
+          <input className="form-control form-control-lg"
             value={userInput}
             onChange={event => setUserInput(event.target.value)}
             type="text"
             placeholder="Search for a book here"
           />
-          <button type="button" className="btn btn-outline-secondary" onClick={handleFormSubmit}>Search!</button>
+          <button type="button" className="btn btn-outline-warning" onClick={handleFormSubmit}>Search!</button>
         </form>
     <div>
             {bookResults && bookResults.map(book => (

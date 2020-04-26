@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function NavBar() {
     return (
-        <ul className="nav nav-tabs">
+        <ul className="nav nav-pills nav-fill">
             <li className="nav-item">
                 <Link
                 to="/"

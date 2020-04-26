@@ -1,68 +1,55 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Google Books search
 
-## Available Scripts
+This application enables users to search for a book, browse through results based upon their search, and save books that they are interested in and they are stored on the saved page. The user  can navigate to the saved page and view all the books that they saved. They can also choose to the view the book which will take them off site to the google store to purchase the book. They can do that both when they search for the book or when they look at their saved books. On the saved page they can choose to delete the book from their list of saved books.
 
-In the project directory, you can run:
+## Table of contents
 
-### `npm start`
+- [General info](#general-info)
+- [Technologies](#Technologies)
+- [Future Plans](#future-plans)
+- [Photos](#photos)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## General Info
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This project utilizes MongoDB, Express, React, and Node.js. Full-Stack web application.
+## Technologies
 
-### `npm test`
+Project is created with :
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [JavaScript](https://www.javascript.com/)
+- [MongoDB](https://www.mongodb.com/cloud/atlas/lp/try2?utm_source=google&utm_campaign=gs_americas_united%20states_search_brand_atlas_desktop&utm_term=mongodb&utm_medium=cpc_paid_search&utm_ad=e&gclid=CjwKCAjw4pT1BRBUEiwAm5QuR5tuT96X0aWGiPXx_vw-P5wzPq0Dio4OlRbGKRq_QWzuV2juDzhoXRoC_-UQAvD_BwE)
+- [Express](https://www.npmjs.com/package/express)
+- [React](https://reactjs.org/docs/create-a-new-react-app.html)
+- [Node.js](https://nodejs.org/en/)
 
-### `npm run build`
+## Future Plans
+I would like to continue working on this app and do some additional styling with CSS, make it stand out a little bit more. I also would like to add socket.io to the application and have real-time messages pop up at the user saves a book to the database!
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Photos
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![image](https://elearningindustry.com/wp-content/uploads/2016/05/top-10-books-every-college-student-read-e1464023124869.jpeg)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Bringing joy and easily accessible information to book lovers all over the place!
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Author
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Esther Walker
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## License
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The MIT License (MIT)
 
-## Learn More
+Copyright (c) Esther Walker 2020
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+*The Software is provided “as is”, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the Software.*

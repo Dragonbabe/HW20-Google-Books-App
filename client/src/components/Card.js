@@ -15,11 +15,12 @@ function Card(props) {
                                 <p>
                                     {props.description}
                                 </p>
-                                <a href={props.link}>See more info!</a><br>
-                                </br>
-                                
-                                <button onClick={() => props.onClick(props.id ?props.id : props.book)}>{props.message}</button> 
+                                <button className="btn btn-outline-warning"onClick={() => props.onClick(props.id ?props.id : props.book)}>{props.message}</button> 
                             </div>
+                            <a href={props.link}>View Book Here!</a><br>
+                            </br>
+                                
+                                
                         </div>
                     </div>
             

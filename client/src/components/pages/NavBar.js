@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
 
 function NavBar() {
@@ -21,7 +20,7 @@ function NavBar() {
                 className={window.location.pathname === `/saved` ? `nav-link active` : `nav-link`
             }
             >
-                Saved Books
+                Saved Books!
             </Link>
             </li>
         </ul>
